@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => sec.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
+
+function placeOrder() {
+  let name = document.getElementById("name").value;
+  let item = document.getElementById("item").value;
+
+  if (name === "") {
+    alert("Please enter customer name");
+    return;
+  }
+
+  document.getElementById("result").innerHTML =
+    "✅ Order placed successfully for <b>" + name + "</b> (" + item + ")";
+}
+</script>
+
+</head>
+
+<body class="bg-orange-50">
+ 
+
+<!-- NAVBAR -->
+<nav class="bg-orange-600 text-white p-4 flex justify-between items-center">
+  <h1 class="text-xl font-bold">☕ dero cafe </h1>
+  <div class="space-x-4">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('menu')">Menu</button>
+    <button onclick="showSection('order')">Order</button>
+    <button onclick="showSection('admin')">Admin</button>
+    <button onclick="showSection('contact')">Contact</button>
+  </div>
+</nav>
+
+<!-- HOME (WITH BACKGROUND IMAGE) -->
+<section id="home"
+  class="p-20 text-center text-white"
+  style="background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93'); background-size:cover; background-position:center;">
+  <h2 class="text-4xl font-bold">Welcome to Our Cafe</h2>
+  <p class="mt-4 text-lg">Fresh coffee & delicious food</p>
+  <button onclick="showSection('menu')" class="mt-6 bg-orange-600 px-6 py-3 rounded">
+    View Menu
+  </button>
+</section>
+
+<section id="menu" class="hidden p-10">
+  <h2 class="text-3xl font-bold text-center mb-6">📋 Cafe Menu</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://img.freepik.com/free-photo/top-view-hot-espresso-with-brown-coffee-seeds-brown-wooden-desk-coffee-cup-drink_140725-28168.jpg?semt=ais_hybrid&w=740&q=80`">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Coffee</h3>
+        <p>₹100</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://media.assettype.com/freepressjournal/2023-01/b35364ef-cc4a-4401-93b1-4fa180b19e3c/ghnb.jpg">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Cold Coffee</h3>
+        <p>₹120</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Pizza</h3>
+        <p>₹250</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://t3.ftcdn.net/jpg/02/17/34/30/360_F_217343007_9Gpk6FQLW4VKtQ971OwAeMxds6v7lTZk.jpg" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Burger</h3>
+        <p>₹150</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Sandwich</h3>
+        <p>₹130</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">French Fries</h3>
+        <p>₹90</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MENU WITH PHOTOS -->
+<section id="menu" class="hidden p-10">
+  <h2 class="text-3xl font-bold text-center mb-6">📋 Cafe Menu</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://img.freepik.com/free-photo/top-view-hot-espresso-with-brown-coffee-seeds-brown-wooden-desk-coffee-cup-drink_140725-28168.jpg?semt=ais_hybrid&w=740&q=80`">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Coffee</h3>
+        <p>₹100</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://media.assettype.com/freepressjournal/2023-01/b35364ef-cc4a-4401-93b1-4fa180b19e3c/ghnb.jpg">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Cold Coffee</h3>
+        <p>₹120</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://t3.ftcdn.net/jpg/00/27/57/96/360_F_27579652_tM7V4fZBBw8RLmZo0Bi8WhtO2EosTRFD.jpg">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Pizza</h3>
+        <p>₹250</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://t3.ftcdn.net/jpg/02/17/34/30/360_F_217343007_9Gpk6FQLW4VKtQ971OwAeMxds6v7lTZk.jpg" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Burger</h3>
+        <p>₹150</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">Sandwich</h3>
+        <p>₹130</p>
+      </div>
+    </div>
+
+    <div class="bg-white shadow rounded overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877" class="w-full h-40 object-cover">
+      <div class="p-4 text-center">
+        <h3 class="font-bold">French Fries</h3>
+        <p>₹90</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="hidden p-10">
+  <h2 class="text-3xl font-bold text-center mb-6">🧾 Place Order</h2>
+
+  <div class="max-w-md mx-auto bg-white p-6 shadow rounded">
+    <label class="block mb-2">Customer Name</label>
+    <input id="name" class="w-full border p-2 mb-4">
+
+    <label class="block mb-2">Select Item</label>
+    <select id="item" class="w-full border p-2 mb-4">
+      <option>Coffee</option>
+      <option>Cold Coffee</option>
+      <option>Pizza</option>
+      <option>Burger</option>
+      <option>Sandwich</option>
+    </select>
+
+    <button onclick="placeOrder()" class="bg-orange-600 text-white px-4 py-2 rounded w-full">
+      Place Order
+    </button>
+
+    <p id="result" class="mt-4 text-green-600 text-center"></p>
+  </div>
+</section>
+
+<!-- ADMIN -->
+<section id="admin" class="hidden p-10">
+  <h2 class="text-3xl font-bold text-center mb-6">🔐 Admin Panel</h2>
+
+  <div class="max-w-md mx-auto bg-white p-6 shadow rounded">
+    <p>Total Orders: <b>20</b></p>
+    <p>Total Sales: <b>₹5,200</b></p>
+    <p>Menu Items: <b>6</b></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="hidden p-10">
+  <h2 class="text-3xl font-bold text-center mb-6">📞 Contact Us</h2>
+
+  <div class="max-w-md mx-auto bg-white p-6 shadow rounded">
+    <p>📍 City Cafe, India</p>
+    <p>📧 cafe@gmail.com</p>
+    <p>📱 +91 9876543210</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-orange-600 text-white text-center p-4 mt-10">
+  © 2025 Cafe Management System
+</footer>
+
+</body>
+</html>
